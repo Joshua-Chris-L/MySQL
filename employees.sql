@@ -711,9 +711,7 @@ first_name,
 ROW_NUMBER() OVER w AS row_num
 
 FROM
-
-employees
-
+	employees
 WINDOW w AS (PARTITION BY first_name ORDER BY emp_no);
     
 ##################################
@@ -743,6 +741,7 @@ RANK() OVER w AS rank_num
 salaries
 WHERE emp_no = 10560
 WINDOW w AS (PARTITION BY emp_no ORDER BY salary DESC);
+
 ##############################################################
 #################### 02/06/2024 ##############################
 SELECT 
@@ -765,7 +764,6 @@ salaries s ON s.emp_no = dm.emp_no
 departments d ON d.dept_no = dm.dept_no
 WINDOW w AS (PARTITION BY dm.dept_no ORDER BY s.salary DESC);
 
-
 #################  Assignment ##################################
 SELECT 
 	e.emp_no,
@@ -778,7 +776,6 @@ JOIN
 WHERE 
 	e.emp_no BETWEEN 10499 AND 10601
 WINDOW w AS (PARTITION BY e.emp_no ORDER BY s.salary DESC);
-
 
 ####################################################################
 SELECT
@@ -820,7 +817,6 @@ FROM
 WHERE salary > 80000 AND e.emp_no BETWEEN 10500 AND 10600
 WINDOW w AS ( PARTITION BY e.emp_no ORDER BY salary);
 	
-
 SELECT
 	emp_no,
     salary,
@@ -843,7 +839,6 @@ FROM
 	salaries
 WHERE 
 	to_date >  SYSDATE();
-
 ######################## Only Full Group Mode Error ##################
 SELECT 
 	emp_no, salary, MAX(from_date), to_date
@@ -927,8 +922,8 @@ SELECT de2.emp_no, d.dept_name, s2.salary, AVG(s2.salary) OVER w AS average_sala
 GROUP BY de2.emp_no, d.dept_name
 WINDOW w AS (PARTITION BY de2.dept_no)
 ORDER BY de2.emp_no;
-###########################################################################################
 
+###########################################################################################
 SELECT 
 	s1.emp_no, s.salary, s.from_date, s.to_date
 FROM
@@ -947,10 +942,6 @@ SELECT
     AVG(salary) AS avg_salary
 FROM
     salaries;
-
-
-
-
 
 
 
