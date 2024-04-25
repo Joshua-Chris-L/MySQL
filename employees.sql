@@ -19,49 +19,17 @@ FROM
     
 SELECT  * FROM employees WHERE first_name = 'Denis';
 
-
 SELECT * FROM employees WHERE first_name = 'Elvis';
     
 SELECT * FROM employees WHERE first_name = 'Denis' AND gender = 'M';
 
-SELECT 
-    *
-FROM
-    employees
-WHERE
-    first_name = 'Kellie' AND gender = 'F';
+SELECT * FROM employees WHERE first_name = 'Kellie' AND gender = 'F';
+SELECT * FROM employees WHERE first_name = 'Denis' OR first_name = 'Elvis';
 
-SELECT 
-    *
-FROM
-    employees
-WHERE
-    first_name = 'Denis'
-        OR first_name = 'Elvis';
-SELECT 
-    *
-FROM
-    employees
-WHERE
-    first_name = 'Kellie'
-        OR first_name = 'Aruna';
-
-SELECT 
-    *
-FROM
-    employees
-WHERE
-    last_name = 'Denis'
-        AND (gender = 'M' OR gender = 'F');
+SELECT * FROM employees WHERE first_name = 'Kellie' OR first_name = 'Aruna';
+SELECT * FROM employees WHERE last_name = 'Denis' AND (gender = 'M' OR gender = 'F');
         
-SELECT 
-    *
-FROM
-    employees
-WHERE
-    gender = 'F'
-        AND (first_name = 'Kellie'
-        OR first_name = 'Aruna');
+SELECT * FROM employees WHERE gender = 'F' AND (first_name = 'Kellie' OR first_name = 'Aruna');
         
 SELECT 
     *
