@@ -7,7 +7,6 @@ SELECT
     *
 FROM
     employees;
-    
 SELECT 
     dept_no
 FROM
@@ -60,16 +59,9 @@ FROM
 WHERE
     first_name NOT IN ('John' , 'Mark', 'Jacob');
 
-SELECT 
-    *
-FROM
-    employees
-WHERE
-    first_name LIKE ('Mark%');
-SELECT 
-    *
-FROM
-    employees
+SELECT * FROM employees WHERE first_name LIKE ('Mark%');
+
+SELECT * FROM employees
 WHERE
     hire_date LIKE ('2000%');
 SELECT 
